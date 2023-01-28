@@ -1,0 +1,259 @@
+.container1{
+  display: flex;
+  flex-direction:column ;
+ align-items: center;
+ justify-content: center;
+
+}
+.allspices{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.allspices {
+  width: 240px;
+  margin: 10px;
+  display: grid;
+  justify-content: center;
+
+}
+
+.card {
+  border-radius: 6px;
+  box-shadow: -10px 10px 15px -10px #493215;
+}
+
+.card-head {
+  position: relative;
+  height: 250px;
+  background: #fa782e;
+
+  background: -moz-linear-gradient(-45deg, #fa782e 8%, #c82930 83%);
+
+  background: -webkit-linear-gradient(-45deg, #fa782e 8%, #c82930 83%);
+
+  background: linear-gradient(135deg, #fa782e 8%, #c82930 83%);
+ 
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#fa782e', endColorstr='#c82930', GradientType=1);
+ 
+  border-radius: 6px 6px 0 0;
+}
+
+.card-logo {
+  width: 55px;
+  margin: 20px;
+}
+
+.product-img {
+  position: absolute;
+  left: 0;
+  margin-top: -16px;
+  margin-left: 50px;
+}
+
+.product-detail {
+  padding: 0 20px;
+  font-size: 11px;
+  color: #fff;
+}
+
+.product-detail h2 {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+
+
+.card-body {
+  height: 150px;
+  background: #fff;
+  border-radius: 0 0 25px 25px;
+}
+
+.product-title {
+  padding: 5px 5px 5px 5px;
+  display: block;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.product-title b {
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+.badge {
+  position: relative;
+  font-size: 10px;
+  font-weight: bold;
+  color: #232323;
+  background: #f4b05e;
+  padding: 4px 5px;
+  border-radius: 4px;
+  top: -2px;
+  margin-left: 5px;
+}
+
+.product-caption {
+  display: block;
+  padding: 0 20px;
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.product-rating {
+  padding: 0 20px;
+  font-size: 11px;
+}
+
+.product-rating i.grey {
+  color: #acacab;
+}
+
+.product-price {
+  position: relative;
+  margin-left: 5px;
+  background: #f9b96b;
+  padding: 3px 6px;
+  text-align: center;
+  display: inline-block;
+  font-size: medium;
+  font-weight: bold;
+  color: #232323;
+  border-radius: 7px;
+  margin-top: 10px;
+  box-shadow: -5px 6px 11px -2px rgb(6 25 13 / 50%);
+}
+
+.cart {
+  right: 25px;
+  font-size: x-large;
+  color: #159b0b;
+  text-shadow: 2px 4px 4px rgba(4, 19, 9, 0.4);
+  position: absolute;
+  object-fit: contain;
+  margin-top: 5px;
+
+}
+
+.wish {
+  right: 65px;;
+  font-size: x-large;
+  color: #900b7e;
+  text-shadow: 2px 8px 5px rgba(4, 19, 9, 0.4);
+  position: absolute;
+  object-fit: contain;
+  margin-top: 5px;
+}
+.wish :hover {
+ color: #b723a3;
+  transition: 0.4s;
+}
+.cart :hover{
+  color: #27bb1d;
+  transition: 0.4s;
+
+}
+.wish :active{
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+  font-size: xx-large;
+  transition: 0.3s;
+}
+
+.cart  :active{
+  font-size: xx-large;
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+  transition: 0.3s;
+
+}
+.product-properties{
+  height: 50px;
+ 
+}
+video{
+  width:25%;
+  height: auto;
+  margin-left: 38%;
+  border: none;
+}
+.btn{
+  background-color: #e6a14e;
+  margin: 5px;
+ 
+
+}
+/* empty cart*/
+.wrapper.one {
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+}
+.drop-main {
+  display: flex;
+  font-size: 2rem;
+  margin: 1.5rem;
+  justify-content: center;
+  font-family: "Russo One", sans-serif;
+}
+.c {
+  opacity: 0;
+  animation: drop 0.4s linear forwards;
+  color: #fb8c04;
+}
+.a {
+  opacity: 0;
+  animation: drop 0.4s linear forwards 0.2s;
+  color: #fba53b;
+}
+.r {
+  opacity: 0;
+  animation: drop 0.4s linear forwards 0.4s;
+  color: #f8a846;
+}
+.t {
+  opacity: 0;
+  animation: drop 0.4s linear forwards 0.6s;
+  color: #f7b86c;
+}
+.e {
+  opacity: 0;
+  animation: drop 0.4s linear forwards 0.6s;
+  color: #f9c88c;
+}
+.s {
+  opacity: 0;
+  animation: drop 0.4s linear forwards 0.8s;
+  color: #fa2121;
+}
+@keyframes drop {
+  0% {
+      transform: translateY(-200px);
+      opacity: 0;
+  }
+  50% {
+      transform: translateY(0px);
+      opacity: 1;
+  }
+  65% {
+      transform: translateY(-17px);
+      opacity: 1;
+  }
+  75% {
+      transform: translateY(-22px);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(0px);
+      opacity: 1;
+  }
+}
+
+
+

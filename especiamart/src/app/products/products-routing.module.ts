@@ -5,12 +5,10 @@ import { CartComponent } from './cart/cart.component';
 import { ProductsComponent } from './products.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 
-const routes: Routes = [
-
+const routes: Routes = [ // for lazy load
   { path: '', component: AllSpicesComponent }, // local host:4200/products path - AllSpicesComponent
   { path: 'cart', component: CartComponent },   //local host:4200/products/cart
   { path: 'wish-list', component: WishListComponent }   //local host:4200/products/wish-list
-
 ];
 
 @NgModule({
