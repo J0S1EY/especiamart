@@ -1,6 +1,6 @@
 
-const mongoose = require ('mongoose')
-
+const mongoose = require('mongoose')
+// mongose connect to database
 mongoose.connect('mongodb://127.0.0.1/especiaMart', { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
   if (err) {
     console.log(`Error connecting to the database: ${err}`);
@@ -10,19 +10,19 @@ mongoose.connect('mongodb://127.0.0.1/especiaMart', { useNewUrlParser: true, use
 });
 
 
-const Products = mongoose.model('Products', {
-    id: Number,
-    title: String,
-    price: Number,
-    description: String,
-    category: String,
-    image: String,
-    rating: {
-        rate: Number,
-        count: Number,
-    }
+const Products = mongoose.model('Products', { // mongoose model 
+  id: Number,
+  title: String,
+  price: Number,
+  description: String,
+  category: String,
+  image: String,
+  rating: {
+    rate: Number,
+    count: Number,
+  }
 })
 
 module.exports = {
-    Products
+  Products
 }

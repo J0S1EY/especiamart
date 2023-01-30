@@ -1,4 +1,4 @@
-const dB = require('./especiaDb')
+const dB = require('./especiaDb') // import db 
 
 // get products
 const getProducts = () => {
@@ -6,7 +6,7 @@ const getProducts = () => {
         if (data) {
             return {
                 statusCode: 200,
-                result: data
+                products: data
             }
         } else {
             return {

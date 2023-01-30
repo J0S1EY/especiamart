@@ -10,6 +10,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
+import { ProductsModule } from './products/products.module';
+
+
 
 
 @NgModule({
@@ -25,7 +28,9 @@ import {MatBadgeModule} from '@angular/material/badge';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatBadgeModule
+    MatBadgeModule,
+    ProductsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
-const express = require ('express')
-const cors = require ('cors')
+const express = require('express')
+const cors = require('cors')
 const dataServices = require('./services/dataServices')
-const app=express()
+const app = express()
 
 
 app.use(express.json()) // json parser 
@@ -11,14 +11,14 @@ app.listen(3000, () => { // port setup
 })
 
 app.use(cors({
-    origin: 'http://localhost:4200'
+    origin: 'http://localhost:4200' // request orgin path from server
 }))
 
 // get products api 
 app.get('/products', (request, respond) => {
     console.log('get all products request completed ')
     dataServices.getProducts().then((result) => {
-        respond.status(result.statusCode).json(result)
+        respond.status(result.statusCode).json(result) // data send to client
     })
 })
 
