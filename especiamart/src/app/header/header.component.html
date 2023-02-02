@@ -16,8 +16,9 @@
         </div>
         <div class="search">
             <form class="form  d-flex" role="search">
-                <input class="form-control" type="search" placeholder="Search Products " aria-label="Search">
-                <i class="fa-solid fa-magnifying-glass me-2 "></i>
+                <input (keyup)="search($event)" class="form-control" type="search" placeholder="Search Products "
+                    aria-label="Search">
+                <i onclick="searchItem()" type="submit" class="fa-solid fa-magnifying-glass me-2 "></i>
             </form>
         </div>
         <div class="wish">
@@ -26,11 +27,11 @@
         <div class="cart">
             <i class="fa-solid fa-cart-shopping" routerLink="/products/cart"></i>
         </div>
-        
+
     </nav>
     <div class="search-1">
         <form class="form-1 d-flex" role="search">
-            <input class="form-control" type="search" placeholder="Search Products " aria-label="Search">
+            <input (keyup)="search($event)" class="form-control" type="search" placeholder="Search Products " aria-label="Search">
             <i class="fa-solid fa-magnifying-glass me-2 "></i>
         </form>
     </div>

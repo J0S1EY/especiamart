@@ -1,58 +1,55 @@
-.container1{
+.container1 {
   display: flex;
-  flex-direction:column ;
- align-items: center;
- justify-content: center;
-
-}
-.allspices{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.allspices {
-  width: 240px;
-  margin: 10px;
-  display: grid;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 
 }
 
+.allspices {
+  margin-top: 5%;
+ 
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  flex: 100%;
+  justify-content: center;
+}
+
+
 .card {
   border-radius: 6px;
-  box-shadow: -10px 10px 15px -10px #493215;
+  box-shadow: -5px 5px 15px -10px #493215;
+  margin: 30px;
+  width: 250px;
+  
+
 }
 
-.card-head {
-  position: relative;
+
+.card-head{
+  width: 250px;
   height: 250px;
-  background: #fa782e;
-
-  background: -moz-linear-gradient(-45deg, #fa782e 8%, #c82930 83%);
-
-  background: -webkit-linear-gradient(-45deg, #fa782e 8%, #c82930 83%);
-
-  background: linear-gradient(135deg, #fa782e 8%, #c82930 83%);
+  padding: 10px;
  
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#fa782e', endColorstr='#c82930', GradientType=1);
- 
-  border-radius: 6px 6px 0 0;
+}
+img{
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+
+}
+.card-head :hover{
+  transform: scale(1.20);
+  transition: 1.3s;
 }
 
-.card-logo {
-  width: 55px;
-  margin: 20px;
-}
 
-.product-img {
-  position: absolute;
-  left: 0;
-  margin-top: -16px;
-  margin-left: 50px;
-}
+
 
 .product-detail {
-  padding: 0 20px;
+  padding: 0 25px;
   font-size: 11px;
   color: #fff;
 }
@@ -67,9 +64,12 @@
 
 
 .card-body {
-  height: 150px;
-  background: #fff;
-  border-radius: 0 0 25px 25px;
+  margin-top: 5%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  
 }
 
 .product-title {
@@ -142,7 +142,8 @@
 }
 
 .wish {
-  right: 65px;;
+  right: 65px;
+  ;
   font-size: x-large;
   color: #900b7e;
   text-shadow: 2px 8px 5px rgba(4, 19, 9, 0.4);
@@ -150,51 +151,59 @@
   object-fit: contain;
   margin-top: 5px;
 }
+
 .wish :hover {
- color: #b723a3;
+  color: #b723a3;
   transition: 0.4s;
 }
-.cart :hover{
+
+.cart :hover {
   color: #27bb1d;
   transition: 0.4s;
 
 }
-.wish :active{
+
+.wish :active {
   -ms-transform: rotate(30deg);
   transform: rotate(30deg);
   font-size: xx-large;
   transition: 0.3s;
 }
 
-.cart  :active{
+.cart :active {
   font-size: xx-large;
   -ms-transform: rotate(30deg);
   transform: rotate(30deg);
   transition: 0.3s;
 
 }
-.product-properties{
+
+.product-properties {
   height: 50px;
- 
+
 }
-video{
-  width:25%;
+
+video {
+  width: 25%;
   height: auto;
   margin-left: 38%;
   border: none;
 }
-.btn{
+
+.btn {
   background-color: #e6a14e;
   margin: 5px;
- 
+
 
 }
+
 /* empty cart*/
 .wrapper.one {
   margin: 5px;
   border-radius: 5px;
   background-color: #1a1a1a;
 }
+
 .drop-main {
   display: flex;
   font-size: 2rem;
@@ -202,58 +211,66 @@ video{
   justify-content: center;
   font-family: "Russo One", sans-serif;
 }
+
 .c {
   opacity: 0;
   animation: drop 0.4s linear forwards;
   color: #fb8c04;
 }
+
 .a {
   opacity: 0;
   animation: drop 0.4s linear forwards 0.2s;
   color: #fba53b;
 }
+
 .r {
   opacity: 0;
   animation: drop 0.4s linear forwards 0.4s;
   color: #f8a846;
 }
+
 .t {
   opacity: 0;
   animation: drop 0.4s linear forwards 0.6s;
   color: #f7b86c;
 }
+
 .e {
   opacity: 0;
   animation: drop 0.4s linear forwards 0.6s;
   color: #f9c88c;
 }
+
 .s {
   opacity: 0;
   animation: drop 0.4s linear forwards 0.8s;
   color: #fa2121;
 }
+
 @keyframes drop {
   0% {
-      transform: translateY(-200px);
-      opacity: 0;
+    transform: translateY(-200px);
+    opacity: 0;
   }
+
   50% {
-      transform: translateY(0px);
-      opacity: 1;
+    transform: translateY(0px);
+    opacity: 1;
   }
+
   65% {
-      transform: translateY(-17px);
-      opacity: 1;
+    transform: translateY(-17px);
+    opacity: 1;
   }
+
   75% {
-      transform: translateY(-22px);
-      opacity: 1;
+    transform: translateY(-22px);
+    opacity: 1;
   }
+
   100% {
-      transform: translateY(0px);
-      opacity: 1;
+    transform: translateY(0px);
+    opacity: 1;
   }
 }
-
-
-

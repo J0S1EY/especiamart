@@ -16,6 +16,13 @@ const getProducts = () => {
         }
     })
 }
+
+const addToWishlist = (id, title, price, description, category, image) => {
+
+}
+
+
+
 module.exports = {
     getProducts
 }

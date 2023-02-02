@@ -1,3 +1,76 @@
+.prodct {
+    padding: 20px;
+}
+
+.product-price {
+    position: relative;
+    margin-left: 5px;
+    background: #f9b96b;
+    padding: 3px 6px;
+    text-align: center;
+    display: inline-block;
+    font-size: medium;
+    font-weight: bold;
+    color: #232323;
+    border-radius: 7px;
+    margin-top: 10px;
+    box-shadow: -5px 6px 11px -2px rgb(6 25 13 / 50%);
+}
+
+.product-properties {
+    height: 50px;
+
+}
+
+.cart {
+    right: 25px;
+    font-size: x-large;
+    color: #0d9f03;
+    text-shadow: 2px 4px 4px rgba(4, 19, 9, 0.4);
+    position: absolute;
+    object-fit: contain;
+    margin-top: 5px;
+
+}
+
+.delete {
+    right: 65px;
+    ;
+    font-size: x-large;
+    color: #d10e03;
+    text-shadow: 2px 4px 4px rgba(4, 19, 9, 0.4);
+    position: absolute;
+    object-fit: contain;
+    margin-top: 5px;
+}
+
+.delete :hover {
+    color: #ab0202;
+    transition: 0.4s;
+}
+
+.cart :hover {
+    color: #0a7902;
+    transition: 0.4s;
+
+}
+
+.delete :active {
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
+    font-size: xx-large;
+    transition: 0.3s;
+}
+
+.cart :active {
+    font-size: xx-large;
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
+    transition: 0.3s;
+
+}
+
+/*Empty cart */
 .container {
     display: flex;
     flex-direction: column;

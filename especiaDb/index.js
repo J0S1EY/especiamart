@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const dataServices = require('./services/dataServices')
+const { request, response } = require('express')
 const app = express()
 
 
@@ -20,5 +21,11 @@ app.get('/products', (request, respond) => {
     dataServices.getProducts().then((result) => {
         respond.status(result.statusCode).json(result) // data send to client
     })
+})
+
+//add to wish list
+app.post('/wish-list', (request, response) => {
+    console.log('add wishlit success')
+    console.log(request.body)
 })
 
