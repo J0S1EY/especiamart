@@ -10,8 +10,7 @@ export class WishListComponent implements OnInit {
   wishList: any = []
   errMessage: string = ''
 
-
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService) { } 
   ngOnInit(): void {
     this.api.getWishlist().subscribe((result: any) => { // get data from api
       this.wishList = result.data
@@ -22,8 +21,8 @@ export class WishListComponent implements OnInit {
 
       }
     )
-
   }
+
   // delete wishlist product
   deleteWishlist(product: any) {
     this.api.deleteWitem(product.id).subscribe((result: any) => {

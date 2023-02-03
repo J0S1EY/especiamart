@@ -1,24 +1,30 @@
-.card{
-   
+.card {
+
     margin: 15px;
     width: 250px;
     height: 350px;
 
 }
-.container{
+
+.container {
     display: flex;
     flex-wrap: wrap;
 }
 
-img{
-    width: 160px;
-    height: 170px;
+img {
+    width: 150px;
+    height: 160px;
     display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-   
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    transition: 1.3s;
 }
+img:hover{
+    transform: scale(1.10);
+    transition: 1.3s;
+  }
+  
 
 
 .cart {
@@ -74,16 +80,16 @@ img{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  
-  }
+
+}
 
 
 video {
     width: 25%;
     height: auto;
     margin-left: 38%;
-   
-    
+
+
 }
 
 .btn {
