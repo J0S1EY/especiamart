@@ -25,9 +25,16 @@ export class ApiService {
       category: product.category,
       image: product.image,
     }
-    return this.http.post('http://localhost:3000/wish-list', body)
+    return this.http.post('http://localhost:3000/addWish-list', body)
+  }
+  getWishlist() {
+    return this.http.get('http://localhost:3000/wish-list')
+  }
 
-
+  // delete wishlist item
+  deleteWitem(id: any) {
+   
+    return this.http.delete("http://localhost:3000/delete-wishlist-item/"+id)
   }
 
 }

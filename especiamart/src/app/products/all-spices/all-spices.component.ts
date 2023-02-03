@@ -15,7 +15,7 @@ export class AllSpicesComponent implements OnInit {
   ngOnInit(): void {
     this.api.getProducts().subscribe((data: any) => { // all products from api 
       this.allProducts = data.products
-      console.log(data.products)
+     // console.log(data.products)
     })
 
     this.api.searchName.subscribe((value: any) => { // search name from header using BehaviorSubject

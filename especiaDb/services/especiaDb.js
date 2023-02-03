@@ -23,7 +23,7 @@ const Products = mongoose.model('Products', { // mongoose model
   }
 })
 // add to wish list
-const Wishlist= mongoose.model('WishList',{
+const Wishlist = mongoose.model('Wishlist', {
   id: Number,
   title: String,
   price: Number,
@@ -32,8 +32,6 @@ const Wishlist= mongoose.model('WishList',{
   image: String,
 
 })
-
-
 
 module.exports = {
   Products,
