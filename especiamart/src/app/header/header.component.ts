@@ -3,6 +3,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { ApiService } from '../products/api.service';
+import { CartService } from '../products/cart service/cart.service';
 
 
 @Component({
@@ -13,10 +14,18 @@ import { ApiService } from '../products/api.service';
 
 })
 export class HeaderComponent implements OnInit {
-  
-  constructor(private api: ApiService) { }
+  cartCount: any = 0
 
-  ngOnInit(): void { }
+  constructor(private api: ApiService, private cart: CartService) { }
+
+  ngOnInit(): void {
+    this.cart.cartItems.subscribe((result: any) => {
+      if (result) {
+        this.cartCount = result.length
+      }
+
+    })
+  }
 
   search(event: any) {
     let searchKey = event.target.value

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { CartService } from '../cart service/cart.service';
 
 @Component({
   selector: 'app-all-spices',
@@ -10,7 +11,7 @@ export class AllSpicesComponent implements OnInit {
   allProducts: any = []
   searchValue: string = '' // BehaviorSubject get search key from header
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private cart: CartService) { }
 
   ngOnInit(): void {
     this.api.getProducts().subscribe((data: any) => { // all products from api 
@@ -32,4 +33,10 @@ export class AllSpicesComponent implements OnInit {
       alert(result.error.message)
     })
   }
+// add to cart 
+addtoCart(product:any){
+  this.cart.addTocart(product)
+
+}
+
 }

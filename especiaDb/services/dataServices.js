@@ -63,10 +63,20 @@ const deleteWishlist = (id) => {
     console.log(id)
     return dB.Wishlist.deleteOne({ id }).then((data) => {
         if (data) {
-            return {
-                statusCode: 200,
-                message: 'Item deleted success fully'
-            }
+            return dB.Wishlist.find().then((result) => {
+                if (result) { // return updated wishlist
+                    return {
+                        statusCode: 200,
+                        message: "Item Removed",
+                        data: result
+                    }
+                } else {
+                    return {
+                        statusCode: 404,
+                        message: 'Failed to fetch data'
+                    }
+                }
+            })
         } else {
             return {
                 statusCode: 404,

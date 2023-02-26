@@ -1,38 +1,41 @@
 <header>
-    <nav class="nav">
-        <div class="sideMenu">
-            <i class="fa-solid fa-bars " data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
-                aria-controls="offcanvasScrolling"></i>
-            <div class="offcanvas offcanvas-start  " data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
-                id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-                <div class="offcanvas-header">
-                    <h6>Offcanvas </h6>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  
+        <nav class="nav">
+            <div class="sideMenu">
+                <i class="fa-solid fa-bars " data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+                    aria-controls="offcanvasScrolling"></i>
+                <div class="offcanvas offcanvas-start  " data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+                    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                    <div class="offcanvas-header">
+                        <h6>Offcanvas </h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4 name" routerLink="/">
-            <h3>Especia Mart</h3>
-        </div>
-        <div class="search">
-            <form class="form  d-flex" role="search">
-                <input (keyup)="search($event)" class="form-control" type="search" placeholder="Search Products "
-                    aria-label="Search">
-                <i onclick="searchItem()" type="submit" class="fa-solid fa-magnifying-glass me-2 "></i>
+            <div class="col-lg-4 name" routerLink="/">
+                <h3>Especia Mart</h3>
+            </div>
+            <div class="search">
+                <form class="form  d-flex" role="search">
+                    <input (keyup)="search($event)" class="form-control" type="search" placeholder="Search Products "
+                        aria-label="Search">
+                    <i onclick="searchItem()" type="submit" class="fa-solid fa-magnifying-glass me-2 "></i>
+                </form>
+            </div>
+            <div class="wish">
+                <i class="fa-solid fa-heart-circle-plus" routerLink="/products/wish-list"></i>
+            </div>
+            <div class="cart" routerLink="/products/cart">
+                <i class="fa-solid fa-cart-shopping " ></i>
+                <span class="badge badge-light">{{cartCount}}</span>
+            </div>
+    
+        </nav>
+        <div class="search-1">
+            <form class="form-1 d-flex" role="search">
+                <input (keyup)="search($event)" class="form-control" type="search" placeholder="Search Products " aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass me-2 "></i>
             </form>
         </div>
-        <div class="wish">
-            <i class="fa-solid fa-heart-circle-plus" routerLink="/products/wish-list"></i>
-        </div>
-        <div class="cart">
-            <i class="fa-solid fa-cart-shopping" routerLink="/products/cart"></i>
-        </div>
-
-    </nav>
-    <div class="search-1">
-        <form class="form-1 d-flex" role="search">
-            <input (keyup)="search($event)" class="form-control" type="search" placeholder="Search Products " aria-label="Search">
-            <i class="fa-solid fa-magnifying-glass me-2 "></i>
-        </form>
-    </div>
+  
 </header>

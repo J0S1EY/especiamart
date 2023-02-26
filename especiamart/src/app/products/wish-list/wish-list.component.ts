@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { CartService } from '../cart service/cart.service';
 
 @Component({
   selector: 'app-wish-list',
@@ -10,7 +11,7 @@ export class WishListComponent implements OnInit {
   wishList: any = []
   errMessage: string = ''
 
-  constructor(private api: ApiService) { } 
+  constructor(private api: ApiService, private cart:CartService) { } 
   ngOnInit(): void {
     this.api.getWishlist().subscribe((result: any) => { // get data from api
       this.wishList = result.data
@@ -26,13 +27,23 @@ export class WishListComponent implements OnInit {
   // delete wishlist product
   deleteWishlist(product: any) {
     this.api.deleteWitem(product.id).subscribe((result: any) => {
+      this.wishList=result.data
       alert(result.message)
-      window.location.reload();
+     
     },
       (result: any) => {
         alert(result.error.message)
       }
     )
   }
+
+  addtoCart(product:any){
+    this.cart.addTocart(product)
+    this.api.deleteWitem(product.id).subscribe((result: any) => {
+      this.wishList=result.data
+      alert("Item added to cart")
+     
+  })
+}
 
 }

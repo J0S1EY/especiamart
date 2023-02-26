@@ -11,7 +11,7 @@
                 <span class="wish">
                     <span (click)="deleteWishlist(product)" class="delete"> <i class="fa-sharp fa-solid fa-trash "></i></span>
                 </span>
-                <span class="cart">
+                <span (click)="addtoCart(product)" class="cart">
                     <i class="fa-solid fa-cart-plus"></i>
                 </span>
             </div>
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div>
-            <video src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/basket-5634723-4707755.mp4"
+            <video src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/boy-walking-with-shopping-cart-7503841-6158699.mp4"
                 autoplay="autoplay" muted="muted" loop="loop" playsinline="" type="video/mp4"></video>
         </div>
         <button type="button" class=" btn text-center " routerLink="/products">Shop Now</button>
