@@ -412,6 +412,16 @@ input, button, select, textarea {
     color: #7c050d;
     text-shadow:  2px 8px 5px  rgba(4, 19, 9, 0.4);
 }
+.delete :hover {
+    color: #9e0610;
+    transition: 0.4s;
+  }
+  .delete :active {
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
+    font-size: xx-large;
+    transition: 0.3s;
+  }
 .checkOut{
     float: right;
 }

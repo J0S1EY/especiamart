@@ -30,5 +30,23 @@ export class CartService {
     return grandSum
   }
 
+  // single item remove from cart
+  removeItem(product: any) {
+    this.cartItemsArray.map((item: any, index: any) => {
+      if (product.id === item.id) {
+        this.cartItemsArray.splice(index, 1)
+      }
+    })
+    this.cartItems.next(this.cartItemsArray)
+  }
+
+  // remove all items from cart
+  clearCart(){
+    this.cartItemsArray=[]
+    this.cartItems.next(this.cartItemsArray)
+  }
+
+
+
 }
 

@@ -1,12 +1,15 @@
 <div class="container">
     <div class="mycart">
-        <div class="col-md-12">
+        <div class="col-md-12 ">
             <h2>
                 Your Basket<small>
-                    {{cartItems.length}}
+                    {{cartItems.length}} Items
                 </small>
+
             </h2>
+            <button (click)="clearCart()" type="button" class="btn btn-outline-danger float-right mb-2">Clear Cart</button>
         </div>
+
         <div class="col-md-7 col-xs-12">
             <div class="add_to_cart_i  " *ngFor="let item of cartItems">
                 <div class="row d-flex ">
@@ -16,25 +19,18 @@
                                 <span id=""> </span>
                                 <div class="item ">
                                     <picture>
-                                        <img [src]="item.image"
-                                            class="responsive-image" title="Bluey's Treehouse Playset"
-                                            alt="Bluey's Treehouse Playset">
+                                        <img [src]="item.image" class="responsive-image"
+                                            title="Bluey's Treehouse Playset" alt="Bluey's Treehouse Playset">
                                     </picture>
                                 </div>
                             </a>
                         </div>
                     </div>
-
                     <div class="col-lg-8 col-md-8 col-md-8 col-xs-7 basket  ">
                         <h4 class="sal_bx_hd">
                             <a href="">
                                 <span class="item-name">{{item.title}}</span>
                             </a>
-                            <span class="pull-right add_to_cros">
-                                <button class="btn " id="">
-                                    <span class="glyphicon glyphicon-remove"></span>
-                                </button>
-                            </span>
                         </h4>
                         <p class="add_to_cart_ref_cod">
                             {{item.category}}</p>
@@ -59,10 +55,12 @@
                             <div class="col-md-4 col-sm-4 col-xs-7 pad_rt">
                                 <form id=" " class="pull-left " action="0">
                                     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                        <label (click)="countmns()" class="btn btn-outline-success btn-sm" for="btnradio1"> - </label>
-                                        <input type="text" id="quantity" name="quantity" class="quantity  " value={{count}}
-                                            size="1">
-                                        <label (click)="countpls()" class="btn btn-outline-success btn-sm" for="btnradio3"> + </label>
+                                        <label (click)="countmns()" class="btn btn-outline-success btn-sm"
+                                            for="btnradio1"> - </label>
+                                        <input type="text" id="quantity" name="quantity" class="quantity  "
+                                            value={{count}} size="1">
+                                        <label (click)="countpls()" class="btn btn-outline-success btn-sm"
+                                            for="btnradio3"> + </label>
                                     </div>
                                 </form>
                             </div>
@@ -70,7 +68,8 @@
                             <div class="col-md-3 col-sm-3 col-xs-5 font-18 margn_top_10 text-right">
                                 <strong>{{item.price}}</strong>
                             </div>
-                            <div class="delete"> <i class="fa-sharp fa-solid fa-trash "></i></div>
+                            <div (click)="removeItem(item)" class="delete"> <i class="fa-sharp fa-solid fa-trash "></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -127,7 +126,7 @@
                                         <strong>Total:</strong>
                                     </span>
                                     <span class="pull-right font-20">
-                                        <strong>  {{grandTotal}}</strong>
+                                        <strong> {{grandTotal}}</strong>
                                     </span>
                                 </div>
                                 <div class="div-separator2"></div>
@@ -137,7 +136,6 @@
                     <button id="checkoutOnCart" class="btn btn-green margn_tp_bt_20 ">
                         Checkout</button>
                 </div>
-
             </div>
         </div>
     </div>

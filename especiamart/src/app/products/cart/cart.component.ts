@@ -25,7 +25,7 @@ export class CartComponent implements OnInit {
       // console.log(this.cartItems)
     })
     this.subTotal = this.cartService.getTotal()
-    this.grandTotal=this.subTotal.toFixed(2)
+    this.grandTotal = this.subTotal.toFixed(2)
 
   }
 
@@ -36,9 +36,19 @@ export class CartComponent implements OnInit {
   countmns() {
     if (this.count > 0) {
       this.count = this.count - 1
-
     }
+  }
+  // remove singile item and updating total amount
+  removeItem(item: any) {
+    this.cartService.removeItem(item)
+    this.subTotal = this.cartService.getTotal()
+    this.grandTotal = this.subTotal.toFixed(2)
 
+  }
+  clearCart(){
+    this.cartService.clearCart()
+    this.subTotal = this.cartService.getTotal()
+    this.grandTotal = this.subTotal.toFixed(2)
   }
 
 }
