@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { CartService } from '../cart service/cart.service';
 
@@ -18,7 +19,7 @@ export class CartComponent implements OnInit {
 
   cartItems: any = []
 
-  constructor(private cartService: CartService, private api: ApiService) {
+  constructor(private cartService: CartService, private api: ApiService, private router:Router) {
 
   }
   ngOnInit(): void {
@@ -115,6 +116,16 @@ export class CartComponent implements OnInit {
       default:
         this.totalAfterDiscount = 0
     }
+  }
+
+  proceed(){
+    alert('Order Placed Successfilly')
+    this.clearCart()
+    this.router.navigateByUrl('products')
+    
+    
+    
+
   }
 
 
