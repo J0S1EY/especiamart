@@ -7,7 +7,8 @@
                 </small>
 
             </h2>
-            <button (click)="clearCart()" type="button" class="btn btn-outline-danger float-right mb-2">Clear Cart</button>
+            <button (click)="clearCart()" type="button" class="btn btn-outline-danger float-right mb-2">Clear
+                Cart</button>
         </div>
 
         <div class="col-md-7 col-xs-12">
@@ -133,8 +134,146 @@
                             </div>
                         </div>
                     </div>
-                    <button id="checkoutOnCart" class="btn btn-green margn_tp_bt_20 ">
+                    <button id="checkoutOnCart" class="btn btn-green margn_tp_bt_20 " data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
                         Checkout</button>
+
+                    <!-- checkout Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Check Out</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-75">
+                                            <div class="container">
+                                                <form action="/action_page.php">
+                                                    <div class="row">
+                                                        <div class="col-50">
+                                                            <h3>Billing Address</h3>
+                                                            <label for="fname"><i class="fa fa-user"></i> Full
+                                                                Name</label>
+                                                            <input type="text" id="fname" name="firstname"
+                                                                placeholder="John M. Doe">
+                                                            <label for="email"><i class="fa fa-envelope"></i>
+                                                                Email</label>
+                                                            <input type="text" id="email" name="email"
+                                                                placeholder="john@example.com">
+                                                            <label for="adr"><i class="fa fa-address-card-o"></i>
+                                                                Address</label>
+                                                            <input type="text" id="adr" name="address"
+                                                                placeholder="542 W. 15th Street">
+                                                            <label for="city"><i class="fa fa-institution"></i>
+                                                                City</label>
+                                                            <input type="text" id="city" name="city"
+                                                                placeholder="New York">
+
+                                                            <div class="row">
+                                                                <div class="col-50">
+                                                                    <label for="state">State</label>
+                                                                    <input type="text" id="state" name="state"
+                                                                        placeholder="NY">
+                                                                </div>
+                                                                <div class="col-50">
+                                                                    <label for="zip">Zip</label>
+                                                                    <input type="text" id="zip" name="zip"
+                                                                        placeholder="10001">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-50">
+                                                            <h3>Payment</h3>
+                                                            <label for="fname">Accepted Cards</label>
+                                                            <div class="icon-container">
+                                                                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                                                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                                                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                                                <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                                            </div>
+                                                            <label for="cname">Name on Card</label>
+                                                            <input type="text" id="cname" name="cardname"
+                                                                placeholder="John More Doe">
+                                                            <label for="ccnum">Credit card number</label>
+                                                            <input type="text" id="ccnum" name="cardnumber"
+                                                                placeholder="1111-2222-3333-4444">
+                                                            <label for="expmonth">Exp Month</label>
+                                                            <input type="text" id="expmonth" name="expmonth"
+                                                                placeholder="September">
+                                                            <div class="row">
+                                                                <div class="col-50">
+                                                                    <label for="expyear">Exp Year</label>
+                                                                    <input type="text" id="expyear" name="expyear"
+                                                                        placeholder="2018">
+                                                                </div>
+                                                                <div class="col-50">
+                                                                    <label for="cvv">CVV</label>
+                                                                    <input type="text" id="cvv" name="cvv"
+                                                                        placeholder="352">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <label>
+                                                        <input type="checkbox" checked="checked" name="sameadr">
+                                                        Shipping address same as billing
+                                                    </label>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                        data-bs-target="#coupon">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="coupon" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Grand Total {{grandTotal}}
+                                    </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" [ngSwitch]="coupon">
+                                    <span *ngSwitchCase="5">
+                                        <img (click)="discount(5)" class="coupon" width="300px"
+                                            src="/assets/coupons/discount5.png" alt="No coupon">
+                                    </span>
+                                    <span *ngSwitchCase="10">
+                                        <img (click)="discount(10)" class="coupon" width="300px"
+                                            src="/assets/coupons/discount10.png" alt="No coupon">
+                                    </span>
+                                    <span *ngSwitchCase="15">
+                                        <img (click)="discount(15)" class="coupon" width="300px"
+                                            src="/assets/coupons/discount15.png" alt="No coupon">
+                                    </span>
+                                    <span *ngSwitchCase="1">
+                                        <img (click)="discount(1)" class="coupon" width="300px"
+                                            src="/assets/coupons/promo.png" alt="No coupon">
+                                    </span>
+                                    <h5 *ngIf="totalAfterDiscount"> Total Amount After Discount :{{totalAfterDiscount}} </h5>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary">Contine</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
